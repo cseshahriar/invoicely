@@ -1,0 +1,15 @@
+Todo
+
+- Create venv
+- Install djang and libraries
+    - djosr 
+    - django-rest-framework
+    - django-cors-headers
+- Create django project
+- config the project
+- add djosr urls
+
+- install vue
+- create project
+- install axios
+- install bulma
