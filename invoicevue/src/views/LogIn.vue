@@ -17,9 +17,12 @@
                             <input type="password" name="password" class="input" v-model="password">
                         </div>
                     </div>
+                    
+                    
                     <div class="notification is-danger" v-if="errors.length">
-                        <p v-for="error in errors" v-bind:key="error">{{error}}</p>
+                        <p v-for="error in errors" v-bind:key="error">{{ error }}</p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <button class="button is-success">Sign Up</button>
@@ -33,6 +36,7 @@
 
 <script>
 import axios from "axios"
+import { toast } from 'bulma-toast'
 
 export default {
     name: 'LogIn',
@@ -59,9 +63,9 @@ export default {
                 const token = response.data.auth_token
                 this.$store.commit('setToken', token)
                 axios.defaults.headers.common["Authorization"] = "Token " + token
-                localStorage.setToken("token", token)
+                localStorage.setItem("token", token)
                 this.$router.push('/dashboard')
-            })
+            })      
             .catch(error => {
                 if(error.response) {
                     for(const property of error.response.data) {

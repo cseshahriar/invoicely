@@ -27,10 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CORS_ALLOWWED_ORIGIN = [
-    'http://localhost:8000',
-    'http://127.0.0.1:8000',
-    'http://192.168.0.101:8080'
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+    "http://192.168.0.102:8080" # vue
 ]
 
 REST_FRAMEWORK = {
