@@ -25,7 +25,7 @@
 
                     <div class="field">
                         <div class="control">
-                            <button class="button is-success">Sign Up</button>
+                            <button class="button is-success">Log in</button>
                         </div>
                     </div>
                 </form>

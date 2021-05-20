@@ -20,8 +20,11 @@
         <div class="navbar-end">
           
           <template v-if="$store.state.isAuthenticated">
-              <router-link to="/dashboard" class="navbar-item">Dashboard</router-link>
-              <router-link to="/log-out" class="button is-danger">Log Out</router-link>
+            <div class="navbar-item">
+              <div class="buttons">
+                <router-link to="/dashboard/my-account" class="button is-light">MyAccount</router-link>
+              </div>
+            </div>
           </template>
 
           <template v-else>

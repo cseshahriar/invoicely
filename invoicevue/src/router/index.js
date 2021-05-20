@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Dashboard from '../views/dashboard/Dashboard.vue'
+import MyAccount from '../views/dashboard/MyAccount'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
 
@@ -35,7 +36,15 @@ const routes = [
     name: 'Dashboard',
     component: Dashboard,
     meta: {
-      requireLogin: true
+      requiredLogin: true
+    }
+  },
+  {
+    path: '/dashboard/my-account',
+    name: 'MyAccount',
+    component: MyAccount,
+    meta: {
+      requiredLogin: true
     }
   },
 ]
@@ -45,9 +54,10 @@ const router = createRouter({
   routes
 })
 
+
 router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
-    next('/log-in')
+  if(to.matched.some(record => record.meta.requiredLogin) && !store.state.isAuthenticated) {
+    next({name: 'LogIn', query: {to: to.path }})
   } else {
     next()
   }
