@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'djoser',
 
     # local
+    'client',
 ]
 
 MIDDLEWARE = [
