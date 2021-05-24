@@ -4,6 +4,17 @@
             <div class="column is-12">
                 <h1 class="title">{{client.name}}</h1>
             </div>
+            
+            <div class="column is-12">
+                <h1 class="subtitle">Contact Details</h1>
+
+                <p><strong>{{ client.name }}</strong></p>
+                <p v-if="client.address1">{{ client.address1 }}</p>
+                <p v-if="client.address2">{{ client.address2 }}</p>
+                <p v-if="client.zipcode || client.place">{{ client.zipcode }} {{ client.place }}</p>
+                <p v-if="client.country">{{ client.country }}</p>
+
+            </div>
         </div>
     </div>
 </template>
