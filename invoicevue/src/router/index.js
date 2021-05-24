@@ -4,6 +4,7 @@ import Dashboard from '../views/dashboard/Dashboard.vue'
 import MyAccount from '../views/dashboard/MyAccount'
 import Clients from '../views/dashboard/Clients.vue'
 import Client from '../views/dashboard/Client.vue'
+import AddClient from '../views/dashboard/AddClient.vue'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
 
@@ -65,6 +66,14 @@ const routes = [
       requiredLogin: true
     }
   },
+  {
+    path: '/dashboard/client/add',
+    name: 'AddClient',
+    component: AddClient,
+    meta: {
+      requiredLogin: true
+    }
+  },  
 ]
 
 const router = createRouter({

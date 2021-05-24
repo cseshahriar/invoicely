@@ -3,6 +3,7 @@
         <div class="columns is-multiline">
             <div class="column is-12">
                 <h1 class="title">Clients</h1>
+                <router-link :to="{name: 'AddClient' }" class="button is-light mt-4">Add Client</router-link>
             </div>
 
             <div class="column is-3" v-for="client in clients" v-bind:key="client.id">
