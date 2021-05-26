@@ -87,7 +87,7 @@ export default {
                 .post("/api/v1/clients/", this.client)
                 .then(response => {
                     toast({
-                        message: 'The change was saved',
+                        message: 'The client was added',
                         type: 'is-success',
                         dismissible: true,
                         duration:2000,

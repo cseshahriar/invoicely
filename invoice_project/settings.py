@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     # local
     'client',
     'team',
+    'invoices',
 ]
 
 MIDDLEWARE = [
