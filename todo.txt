@@ -1,15 +1,22 @@
 Todo
 
-- Create venv
-- Install djang and libraries
+- Done Create venv
+- Done Install djang and libraries
     - djosr 
     - django-rest-framework
     - django-cors-headers
-- Create django project
-- config the project
-- add djosr urls
+- Done Create django project
+- Done config the project
+- Done add djosr urls
 
-- install vue
-- create project
-- install axios
-- install bulma
+- Done install vue
+- Done create project
+- Done install axios
+- Done install bulma
+
+part -4 
+
+- create new django app and models for teams
+- create page for editing your team
+- install and implement bumla 
+- install and implement bulma toast

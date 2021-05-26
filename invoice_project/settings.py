@@ -60,6 +60,7 @@ INSTALLED_APPS = [
 
     # local
     'client',
+    'team',
 ]
 
 MIDDLEWARE = [

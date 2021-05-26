@@ -3,7 +3,10 @@
         <div class="columns">
             <div class="column is-8 is-offset-2">
                 <h1>My Account</h1>
-                <button @click="logout()" class="button is-danger">Log out</button>
+                <div class="buttons">
+                    <router-link to="/dashboard/my-account/edit-team" class="button is-light">Edit Team</router-link>
+                    <button @click="logout()" class="button is-danger">Log out</button>
+                </div>
             </div>
         </div>
     </div>
