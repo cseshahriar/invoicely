@@ -7,6 +7,7 @@ import Client from '../views/dashboard/Client.vue'
 import AddClient from '../views/dashboard/AddClient.vue'
 import EditClient from '../views/dashboard/EditClient.vue'
 import EditTeam from '../views/dashboard/EditTeam.vue'
+import Invoices from '../views/dashboard/Invoices.vue'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
 
@@ -60,6 +61,14 @@ const routes = [
       requiredLogin: true
     }
   },
+  {
+    path: '/dashboard/invoices',
+    name: 'Invoices',
+    component: Invoices,
+    meta: {
+      requiredLogin: true
+    }
+  },  
   {
     path: '/dashboard/clients',
     name: 'Clients',

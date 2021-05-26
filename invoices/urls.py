@@ -1,11 +1,11 @@
 from django.urls import path, include
 
 from rest_framework.routers import DefaultRouter
-# from .views import InvoiceViewSet
+from .views import InvoiceViewset
 
 router = DefaultRouter()
-# router.register("invoices", InvoiceViewSet, basename="invoices")
+router.register("invoices", InvoiceViewset, basename="invoices")
 
 urlpatterns = [
-    # path('', include(router.urls))
+    path('', include(router.urls))
 ]

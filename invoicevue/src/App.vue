@@ -22,8 +22,10 @@
           <template v-if="$store.state.isAuthenticated">
             <div class="navbar-item">
               <div class="buttons">
-                <router-link to="/dashboard/my-account" class="button is-light">MyAccount</router-link>
+                <router-link to="/dashboard" class="button is-light">Dashboard</router-link>
                 <router-link to="/dashboard/clients" class="button is-light">Clients</router-link>
+                <router-link to="/dashboard/invoices" class="button is-light">Invoices</router-link>
+                <router-link to="/dashboard/my-account" class="button is-light">MyAccount</router-link>
               </div>
             </div>
           </template>
