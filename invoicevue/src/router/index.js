@@ -5,6 +5,7 @@ import MyAccount from '../views/dashboard/MyAccount'
 import Clients from '../views/dashboard/Clients.vue'
 import Client from '../views/dashboard/Client.vue'
 import AddClient from '../views/dashboard/AddClient.vue'
+import EditClient from '../views/dashboard/EditClient.vue'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
 
@@ -62,6 +63,14 @@ const routes = [
     path: '/dashboard/client/:id',
     name: 'Client',
     component: Client,
+    meta: {
+      requiredLogin: true
+    }
+  },
+  {
+    path: '/dashboard/client/:id/edit',
+    name: 'EditClient',
+    component: EditClient,
     meta: {
       requiredLogin: true
     }

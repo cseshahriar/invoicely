@@ -1,8 +1,8 @@
 <template>
-    <div class="page-add">
+    <div class="page-edit" >
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Add Client</h1>
+                <h1 class="title">Edit - {{ client.name }}</h1>
             </div>
 
             <div class="column is-6">
@@ -61,7 +61,7 @@
             <div class="column is-12">
                 <div class="field">
                     <div class="control">
-                        <button class="button is-success" @click="submitForm">Submit</button>
+                        <button class="button is-success" @click="submitForm">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -74,21 +74,39 @@
 import axios from "axios"
 
 export default {
-    name:'AddClient',
+    name:'EditClient',
     data() {
         return {
-            client: {}
+            client: {},
         }
     },
+    mounted() {
+         this.getClients()
+    },
     methods: {
-        submitForm() {
+        getClients() {
+            const clientID = this.$route.params.id
+
             axios
-                .post("/api/v1/clients/", this.client)
+                .get(`/api/v1/clients/${clientID}`)
+                .then(response => {
+                    this.client = response.data
+                })
+                .catch(error => {
+                    console.log(JSON.stringify(error))
+                })
+        },
+        submitForm() {
+            
+            const clientID = this.$route.params.id
+
+            axios
+                .patch(`/api/v1/clients/${clientID}/`, this.client)
                 .then(response => {
                     this.$router.push('/dashboard/clients')
                 })
                 .catch(error => {
-                    control.log(JSON.stringify(error))
+                    console.error(JSON.stringify(error))
                 })
         }
     }
