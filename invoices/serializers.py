@@ -1,9 +1,13 @@
 from rest_framework import serializers
 from .models import Invoice, Item
+from client.models import Client
 
 
 class InvoiceSerializer(serializers.ModelSerializer):
-    client = serializers.StringRelatedField() # get __str__ val for fk
+    client = serializers.HyperlinkedRelatedField(
+        view_name='clients-detail',
+        queryset= Client.objects.all()
+    )
     class Meta:
         model = Invoice
         read_only_fields = (
@@ -15,6 +19,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
         )
         fields = (
             'id',
+            'invoice_number',
             'client',
             'client_name',
             'client_email',
@@ -42,3 +47,13 @@ class ItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Item
+        read_only_fields = ('invoice',)
+        fields = (
+            'id',
+            'title',
+            'quantity',
+            'unit_price',
+            'net_amount',
+            'vat_rate',
+            'discount'
+        )

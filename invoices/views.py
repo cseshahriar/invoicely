@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 
-from .serializers import InvoiceSerializer
+from .serializers import InvoiceSerializer, ItemSerializer
 from django.core.exceptions import PermissionDenied
 
 from .models import Invoice, Item
@@ -25,3 +25,12 @@ class InvoiceViewset(viewsets.ModelViewSet):
             raise PermissionDenied('Wrong object owner')
 
         serializer.save()
+
+
+class ItemViewset(viewsets.ModelViewSet):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
+
+    def get_queryset(self):
+        invoice_id = self.request.GET.get('invoice_id', 0)
+        return self.queryset.filter(invoice__id=invoice_id)
