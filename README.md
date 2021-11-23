@@ -1,1 +1,1 @@
-# invoivcely
+# Django and Vue pet project
